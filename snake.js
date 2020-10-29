@@ -1,12 +1,12 @@
-function Snek() {
+function Snake() {
     this.speed = 1;
     this.x = 0;
     this.y = 0;
     // initial speed
     this.xSpeed = scale * this.speed;
     this.ySpeed = 0;
-    // snek length
-    this.sneklength = 5;
+    // snake length
+    this.snakelength = 5;
     this.tail = [];
 
     this.draw = function() {
@@ -21,22 +21,22 @@ function Snek() {
     }
 
     this.update = function() {
-        // figure out snek's length
+        // figure out snake's length
         for (let i=0; i<this.tail.length-1; i++) {
             this.tail[i] = this.tail[i+1];
         }
-        this.tail[this.sneklength - 1] = {x: this.x, y: this.y};
+        this.tail[this.snakelength - 1] = {x: this.x, y: this.y};
 
-        // move snek
+        // move snake
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-        // prevent snek from going out of bounds
-        if (this.x > canvas.width) {
+        // prevent snake from going out of bounds
+        if (this.x > canvas.width - 1) {
             this.x = 0;
         } else if (this.x < 0) {
             this.x = canvas.width;
         }
-        if (this.y > canvas.height) {
+        if (this.y > canvas.height - 1) {
             this.y = 0;
         } else if (this.y < 0) {
             this.y = canvas.height;
@@ -66,7 +66,7 @@ function Snek() {
 
     this.eat = function(food) {
         if (this.x === food.x && this.y === food.y) {
-            this.sneklength++;
+            this.snakelength++;
             return true;
         } else {
             return false;
