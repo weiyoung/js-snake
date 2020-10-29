@@ -41,7 +41,7 @@ function drawScore(score) {
     if (score % 3 === 2) {
         context.font = "69px Comic Sans MS";
         context.textAlign = "center";
-        context.fillText("oh yeah", canvas.width/2, canvas.height/2);
+        context.fillText("ohhh yeahhhh", canvas.width/2, canvas.height/2);
     }
 }
 
