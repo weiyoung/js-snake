@@ -34,9 +34,9 @@ let snek;
 }());
 
 function drawScore(score) {
+    context.fillStyle = "Black";
     context.font = "20px Courier";
     context.textAlign = "left";
-    context.fillStyle = "Black";
     context.fillText("score: " + score.toString(), scale, canvas.height - scale);
     if (score % 3 === 2) {
         context.font = "69px Comic Sans MS";
