@@ -1,9 +1,9 @@
 const canvas = document.querySelector(".canvas");
 const context = canvas.getContext("2d");
-// screen size/scale
-const scale = 20;
-// game speed
-const speed = 10;
+// CHANGE GAME SCALE! any number from 10 to 50
+const scale = 25;
+// CHANG GAME SPEED! any number from 1 to 10
+const speed = 5;
 
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
@@ -16,7 +16,12 @@ let snek;
     const fod = new Food();
 
     fod.pickLocation();
+    window.alert("press ENTER or click OK to play \nuse arrow keys to control snake");
+    playGame(snek, fod);
 
+}());
+
+function playGame(snek, fod) {
     window.setInterval(() => {
         context.clearRect(0, 0, canvas.width, canvas.height);
         fod.draw();
@@ -28,20 +33,26 @@ let snek;
             score++;
         }
 
+        if (snek.eatSelf()) {
+            location.reload();
+            window.alert("GAME OVER \nscore: " + score);
+            score = 0;
+        }
+
         drawScore(score);
 
-    }, 1000/speed);
-}());
+    }, 250/speed);
+}
 
 function drawScore(score) {
-    context.fillStyle = "Black";
+    context.fillStyle = "White";
     context.font = "20px Courier";
     context.textAlign = "left";
     context.fillText("score: " + score.toString(), scale, canvas.height - scale);
     if (score % 3 === 2) {
         context.font = "69px Comic Sans MS";
         context.textAlign = "center";
-        context.fillText("ohhhhh yeahhhhhh", canvas.width/2, canvas.height/2);
+        context.fillText("OH YEAH", canvas.width/2, canvas.height/2);
     }
 }
 

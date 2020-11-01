@@ -46,18 +46,22 @@ function Snake() {
     this.changeDirection = function(direction) {
         switch (direction) {
             case 'Up':
+                if (this.ySpeed !== 0) break;
                 this.xSpeed = 0;
                 this.ySpeed = - (scale * this.speed);
                 break;
             case 'Down':
+                if (this.ySpeed !== 0) break;
                 this.xSpeed = 0;
                 this.ySpeed = (scale * this.speed);
                 break;
             case 'Left':
+                if (this.xSpeed !== 0) break;
                 this.xSpeed = - (scale * this.speed);
                 this.ySpeed = 0;
                 break;
             case 'Right':
+                if (this.xSpeed !== 0) break;
                 this.xSpeed = (scale * this.speed);
                 this.ySpeed = 0;
                 break;
@@ -71,5 +75,17 @@ function Snake() {
         } else {
             return false;
         }
+    }
+
+    this.eatSelf = function() {
+        let boolean = false;
+        for (let i = 0; i < this.tail.length; i++) {
+            if (this.x === this.tail[i].x && this.y === this.tail[i].y) {
+                // TODO new version will simply splice off the tail and continue the game
+                // this.tail.splice(i);
+                boolean = true;
+            }
+        }
+        return boolean;
     }
 }

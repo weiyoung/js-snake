@@ -1,6 +1,6 @@
 function Food() {
-    this.x;
-    this.y;
+    this.x = 0;
+    this.y = 0;
 
     this.pickLocation = function () {
         this.x = (Math.floor(Math.random() * rows - 1) + 1) * scale;
