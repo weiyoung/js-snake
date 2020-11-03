@@ -1,3 +1,7 @@
 # js-snek
 
 Made a snake game using vanilla JavaScript!
+
+Yea... a normal snake game is boring... but this is no normal snake game!
+
+Download the repo and open index.html to play it!
