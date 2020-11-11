@@ -1,6 +1,6 @@
 # js-snek
 
-Made a snake game using vanilla JavaScript!
+Made using JavaScript.
 
 Yea... a normal snake game is boring... but this is no normal snake game!
 
