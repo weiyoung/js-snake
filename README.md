@@ -1,8 +1,6 @@
 # js-snek
 
-Made using JavaScript.
-
-I maed snek. pley plz.
+I maed snek wiz Javaskriptz. pley plz.
 
 <img src="./snek.png" width="400" height="400">
 
