@@ -2,7 +2,7 @@
 
 Made using JavaScript.
 
-Yea... a normal snake game is boring... but this is no normal snake game!
+I maed snek. pley plz.
 
 <img src="./snek.png" width="400" height="400">
 
